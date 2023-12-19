@@ -9,3 +9,6 @@ Basic commands of docker
 
 
 deman means runbehind the seen just like -d deattach mode
+
+# docker network rm (network name)     // to delete the network
+# rm -rf /data/   // to delete the directory
