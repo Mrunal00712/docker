@@ -1,0 +1,11 @@
+Basic commands of docker 
+#docker rm -f $(docker ps -a -q) // delete all the comtainer in one go
+
+#docker run -it --name os1 --rm ubuntu:14.04 date // launch the container 
+                                                     run the command &
+                                                     delete the containter
+
+# docker ps -a // shows all the running and stop containers
+
+
+deman means runbehind the seen just like -d deattach mode
