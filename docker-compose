@@ -1,0 +1,65 @@
+typing commands to perform certain task (like 3 tier architecture) :- Manuly (make process slow), wihout devops (technoloy, principle(other thisng is automation)) you will nat abel to surview the world 
+
+  with he help of Docker Compose we will automate the things by writhing the code(yaml code)
+
+  documentation: docs.docker.com/compose/
+  
+  Install the software docker compose
+  install compose standalone :- https://docs.docker.com/compose/install/other/#install-compose-standalone
+# curl -SL https://github.com/docker/compose/releases/download/v2.23.3/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+
+to make command execuatable we need to run one command "chmod" in linux
+
+  # chmod +x /usr/local/bin/docker-compose
+
+  // check properly runnin or not
+  # docker-compose version // commands run succsefully no error comes up
+  Architecture
+                Compose
+              Docker - Engine
+                  O.S
+
+  docker compose will help you in a automation world in automation you will always write a code
+*****************docker-compose Installed *************************************************
+  create a workspace for storing yaml file
+
+mycode.yml file
+  version: "3.8"         ///good practice to write // chech version at :- docs.docker.com/compose/compose-file/compose-file-v3/
+  services: 
+    c1:
+      container_name: "myos1"
+      image: "ubuntu:14.04"
+      command: "cal"
+
+    c2:
+      container_name: "myos2"
+      image: "centos:7"
+      command: "cal"
+  # docker-compose -f mycode.yml up
+  # docker-compose -f mycode.yml ps     //  this command will teel you by above cammand what we launch the two cantainer
+  # mv mycode.yml docker-compose.yml    // mv cammand used to rename file
+  by deafualt file for docker compose is "docker-compose.yml"
+  # docker-compose logs (container name)
+  #docker-compose stop 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
