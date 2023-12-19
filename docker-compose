@@ -120,6 +120,8 @@ services:
       - MYSQL_PASSWORD=redhat
 
   wp:
+    depends_on:            // because suppose the db container takes longer time , if wp container runs it will fail thts why depends keyword is use and given by docker compose
+      - db
     image: wordpress:latest
     container_name: mywp1
     networks: 
