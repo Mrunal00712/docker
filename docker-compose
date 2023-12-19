@@ -20,9 +20,9 @@ to make command execuatable we need to run one command "chmod" in linux
                   O.S
 
   docker compose will help you in a automation world in automation you will always write a code
-*****************docker-compose Installed *************************************************
+**docker-compose Installed ***
   create a workspace for storing yaml file
-
+*******************************************************************************************************************************
 mycode.yml file
   version: "3.8"         ///good practice to write // chech version at :- docs.docker.com/compose/compose-file/compose-file-v3/
   services: 
@@ -35,6 +35,7 @@ mycode.yml file
       container_name: "myos2"
       image: "centos:7"
       command: "cal"
+*****************************************************************************************************************************
   # docker-compose -f mycode.yml up
   # docker-compose -f mycode.yml ps     //  this command will teel you by above cammand what we launch the two cantainer
   # mv mycode.yml docker-compose.yml    // mv cammand used to rename file
@@ -47,16 +48,96 @@ mycode.yml file
 
 
 
+project:-
+we are creating the 3 tier achitecture manualy as well as with docker-compose(autamaticaly writing set of instruction in .yml file)
+
+step 1.*creating a our own Docker network
+# docker network create lwnet --driver bridge
+
+step 2.*launching the container with name, network & image(mysql from docker hub)
+    for creating the data bases their are some variable which need to use compularsaly
+    check the documentation of MYSQL offical image in the docker hub
+step 3.for database and network
+# docker run -dit --name mydb1 --network lwnet
+  -e MYSQL_ROOT_PASSWORD=redhat
+  -e MYSQL_DATABASE=blogdb
+  -e MYSQL_USER=vimal
+  -e MYSQL_PASSWORD=redhat
+  -v /data:/var/lib/mysql              //create o directory of /data in host system to store the data
+   mysql:latest                                   //-v /my:/new                   //multiple volume you can connet or give
+
+step 4.for wordpress
+# docker run -dit --name mywp1 --network lwnet 
+  -p 8080:80
+  wordpress:latest
+********************************************************************************************************************************
+using docker compose .yml file
+
+version: "3.8"
+services:
+  db:
+    image: mysql:latest
+    container_name: mydb1
+    networks: 
+      - lwnet
+    volumes:
+      - /data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=redhat
+      - MYSQL_DATABASE=blogdb
+      - MYSQL_USER=vimal
+      - MYSQL_PASSWORD=redhat
+
+  wp:
+    image: wordpress:latest
+    container_name: mywp1
+    networks: 
+      - lwnet
+    ports: 
+      - 8080:80
 
 
+networks:
+  lwnet:
+    driver: bridge
+
+**************************************************************************************************************************************
+when the database & wordpress launch the word press is asking the the login deatils = automating wp login details using the environment variable
+
+version: "3.8"
+services:
+  db:
+    image: mysql:latest
+    container_name: mydb1
+    networks: 
+      - lwnet
+    volumes:
+      - /data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=redhat
+      - MYSQL_DATABASE=blogdb
+      - MYSQL_USER=vimal
+      - MYSQL_PASSWORD=redhat
+
+  wp:
+    image: wordpress:latest
+    container_name: mywp1
+    networks: 
+      - lwnet
+    ports: 
+      - 8080:80
+    environment:
+      - WORDPRESS_DB_HOST=mydb1
+      - WORDPRESS_DB_USER=vimal
+      - WORDPRESS_DB_PASSWORD=redhat
+      - WORDPRESS_DB_NAME=blogdb
 
 
+networks:
+  lwnet:
+    driver: bridge
 
-
-
-
-
-
+*********************************************************************************************************************************
 
 
 
