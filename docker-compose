@@ -71,7 +71,7 @@ step 4.for wordpress
   -p 8080:80
   wordpress:latest
 ********************************************************************************************************************************
-using docker compose .yml file
+using docker compose .yml file   (3 tier architecture)
 
 version: "3.8"
 services:
