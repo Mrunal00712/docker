@@ -5,4 +5,12 @@ Benefits-
     - you can set up your own custom container in image
     - we can't share the containr but can share the image
     - whatever set-up i do in a container i can share with others by creating the image
+    - you can clone your container into an image
 
+Their are two ways to create a custom image = @1 commit, @2code
+
+1. Commit
+    # docker commit (container name ) (your owm image name and version) 
+eg., # docker commit myos1 lwimage:v1        //you can create yur own image & using that image you can also launch the container
+
+    # docker run -it lwimage:v1
