@@ -39,3 +39,4 @@ FROM centos:7
 WORKDIR /var/www/html
 COPY data/linux.txt home.html
 RUN echo vimal daga > hi.html // run commnad always come in last
+CMD httpd    // RUN command use for the build time and CMD command use for the run time
