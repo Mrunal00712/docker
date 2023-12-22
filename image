@@ -20,3 +20,22 @@ eg., # docker commit myos1 lwimage:v1        //you can create yur own image & us
 2. Code (Docker File)
 
 FROM centos:7    //with the help of from keyword you are telling to the code that you have to create a image base image i want to use from centos
+                    from this image launch a comntainer
+RUN mkdir /lwdir                //on this container create a directory  
+RUN touch /lwdir/bb                //inside this directory i want to create a file        **his are the linux commands you want tell docker this are the commands to perform use RUM keyword
+RUN yum install net-tools -y                            // after trhis i want to install software
+
+# docker build --file (file name in which you save the code also give the path)  --tag (image name you want to give)    
+eg., #docker build -f myc /code/ -t mylwnew:mytag1  
+why use .(dot)= means whereve you are stay their means current folder
+fail=1
+pass=0
+
+In the automation you have to use not ineractive command (eg., yum install net-tools -y)
+
+
+Dockerfile
+FROM centos:7
+WORKDIR /var/www/html
+COPY data/linux.txt home.html
+RUN echo vimal daga > hi.html // run commnad always come in last
