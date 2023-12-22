@@ -1,3 +1,8 @@
 whatever your image(cenos) conatains will reflect to your container 
 eg., date cmd, ifconfig command etc.
 
+Benefits-
+    - you can set up your own custom container in image
+    - we can't share the containr but can share the image
+    - whatever set-up i do in a container i can share with others by creating the image
+
