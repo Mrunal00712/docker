@@ -14,3 +14,9 @@ Their are two ways to create a custom image = @1 commit, @2code
 eg., # docker commit myos1 lwimage:v1        //you can create yur own image & using that image you can also launch the container
 
     # docker run -it lwimage:v1
+*(* we mostly dont use commit cammand because it dose not provide much facility 
+
+
+2. Code (Docker File)
+
+FROM centos:7    //with the help of from keyword you are telling to the code that you have to create a image base image i want to use from centos
