@@ -41,7 +41,7 @@ COPY data/linux.txt home.html
 RUN echo vimal daga > hi.html // run commnad always come in last
 CMD httpd    // RUN command use for the build time and CMD command use for the run time
 
-**********************************************
+********************************************************************************************************************
 Key Words
     - FORMis a keyword in the code file to tell about the base image
     - RUNis a keyword in the code file for running the commands
@@ -55,3 +55,6 @@ Key Words
     - COPY keyword is used for copying the files from the base system to the image
     - If we have to run the command at build time we have to use the RUNkeyword in the docker file 
         If we have to run the command at runtimewe have to use CMD / ENTRYPOINTkeyword in the docker file
+**********************************************************************************************************************
+
+
