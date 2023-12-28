@@ -55,6 +55,8 @@ Key Words
     - COPY keyword is used for copying the files from the base system to the image
     - If we have to run the command at build time we have to use the RUNkeyword in the docker file 
         If we have to run the command at runtimewe have to use CMD / ENTRYPOINTkeyword in the docker file
+    - MAINTAINER keyword use to give author detail
+        eg., # MAINTAINER Vimal Daga <vimal@lw.com>
 **********************************************************************************************************************
 How to save the image # docker save (image name) -o (file name.tar)
     eg., # docker save myh:v1 -o myweb.tar
@@ -62,3 +64,26 @@ How to save the image # docker save (image name) -o (file name.tar)
 
 How can you use the save command (share on email, put on pendrive, download, etc..)
     # docker load -i myweb.tar    //the Image will download in the system
+************************************************************************************************************************
+Dockerfile : Create a P. L.(python- pre setup development environment) Interpreture
+
+            FROM centos:7
+            RUN yum install python3 -y
+            CMD python3
+            # my.py : command argument
+            # python3 my.py
+    # docker build .
+
+            FROM centos:7
+            RUN yum install python3 -y
+            RUN mkdir /code
+            COPY my.py  /code
+            CMD python3 my.py
+
+KEYWORD= ENTYPOINT // it gives you capability to take the argument from the command line 
+        FROM centos:7
+        RUN yum install python3 -y
+        RUN mkdir /code
+        ENRYPOINT [ "cal" ]
+# dcker build .
+# docker run it mypy:v1 11 2023
