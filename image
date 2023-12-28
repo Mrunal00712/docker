@@ -56,5 +56,9 @@ Key Words
     - If we have to run the command at build time we have to use the RUNkeyword in the docker file 
         If we have to run the command at runtimewe have to use CMD / ENTRYPOINTkeyword in the docker file
 **********************************************************************************************************************
+How to save the image # docker save (image name) -o (file name.tar)
+    eg., # docker save myh:v1 -o myweb.tar
+                                        //.tar for archive file
 
-
+How can you use the save command (share on email, put on pendrive, download, etc..)
+    # docker load -i myweb.tar    //the Image will download in the system
