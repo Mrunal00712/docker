@@ -87,3 +87,13 @@ KEYWORD= ENTYPOINT // it gives you capability to take the argument from the comm
         ENRYPOINT [ "cal" ]
 # dcker build .
 # docker run it mypy:v1 11 2023
+*************************************************************************************************************************************
+Share = @1 save /load
+        @2 Internet (Docker Registry - hub.docker.com) 
+Steps to upload Image on docker registory
+ 1. Login # docker login 
+
+2. docker push (image name) eg., # docker push mypy:v1
+ ***Denied***
+3. # docker push (accountname/imagename)
+************************************************************************************************************************************
