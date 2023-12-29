@@ -98,3 +98,43 @@ Steps to upload Image on docker registory
  ***Denied***
 3. # docker push (accountname/imagename)
 ************************************************************************************************************************************
+Dockerfile Image of live JavaScript code Interpreture
+
+Step 1. Create a directory for your project and navigate into it:
+mkdir mywebsite
+cd mywebsite
+
+step2. Create a file named Dockerfile in the project directory:
+# Use an official Apache image as a parent image
+FROM httpd:2.4
+
+# Set the working directory to /usr/local/apache2/htdocs
+WORKDIR /usr/local/apache2/htdocs
+
+# Copy the current directory contents into the container at /usr/local/apache2/htdocs
+COPY . .
+
+# Expose port 80 to the outside world
+EXPOSE 80
+
+# CMD specifies the command to run on container startup
+CMD ["httpd-foreground"]
+
+step 3. Put your HTML file and any other necessary files in the project directory. For example, if your HTML file is named index.html, place it in the project directory.
+mywebsite/
+|-- Dockerfile
+|-- index.html
+
+step 4. Build your Docker image
+docker build -t mrunal0712/javascriptinerpreture .
+
+step 5.  Run a container using the created image
+docker run -p 8080:80 mrunal0712/javascriptinerpreture:latest
+
+
+
+************************************************************************************************************************************
+Integrating docker-compose & Dockerfile
+
+tomcat == is one kind of webserver tomcat ( web pages/ web applicatin  created in lang JAVA, we nornamlly use tomcat webserver) tomcat will deploy the java websides
+we keep our webpages in /local/tomcat/webapps/ROOT folder (create a ROOT folder)
