@@ -22,3 +22,8 @@ every command come wth the manual ex., # man httpd
 
 Webserver = httpd (use in webpages created in lang HTML)
             tomcat ( web pages/ web applicatin  created in lang JAVA, we nornamlly use tomcat webserver) tomcat will deploy the java websides 
+
+
+Archive file means :=
+when you have a bunch of file store in one box,
+your software has lots of file when you share it (in windoa rar & linux tar) you share the archive file
