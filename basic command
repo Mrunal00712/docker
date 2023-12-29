@@ -15,3 +15,6 @@ deman means runbehind the seen just like -d deattach mode
 
 
 every command come wth the manual ex., # man httpd
+
+
+# docker build -t myimage:0.1 .   // for building the images
