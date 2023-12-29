@@ -141,7 +141,18 @@ networks:
 
 *********************************************************************************************************************************
 
+Intergarting with docker file
 
+docker-compose.yml 
+vesion: "3"
+services:
+    webapp:
+        build: /pathDockerfile    or   .
+        image: mytomcat:v1
+
+# docker-compose build
+# docker-compose images
+#docker compose up
 
 
 
