@@ -86,6 +86,7 @@ KEYWORD= ENTYPOINT // it gives you capability to take the argument from the comm
         RUN mkdir /code
         ENRYPOINT [ "cal" ]
 # dcker build .
+# docker build -t myimage:0.1 .   // for building the images
 # docker run it mypy:v1 11 2023
 *************************************************************************************************************************************
 Share = @1 save /load
