@@ -18,3 +18,7 @@ every command come wth the manual ex., # man httpd
 
 
 # docker build -t myimage:0.1 .   // for building the images
+
+
+Webserver = httpd (use in webpages created in lang HTML)
+            tomcat ( web pages/ web applicatin  created in lang JAVA, we nornamlly use tomcat webserver) tomcat will deploy the java websides 
