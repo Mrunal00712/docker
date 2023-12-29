@@ -57,6 +57,7 @@ Key Words
         If we have to run the command at runtimewe have to use CMD / ENTRYPOINTkeyword in the docker file
     - MAINTAINER keyword use to give author detail
         eg., # MAINTAINER Vimal Daga <vimal@lw.com>
+    - ADD same as copy extra funcitionality is that you can add the URl eg., git hub rwa file URL
 **********************************************************************************************************************
 How to save the image # docker save (image name) -o (file name.tar)
     eg., # docker save myh:v1 -o myweb.tar
@@ -150,3 +151,5 @@ services:
     webapp:
         build: /pathDockerfile    or   .
         image: mytomcat:v1
+        ports:
+            - "8081:8080"   // any no. you can give 
