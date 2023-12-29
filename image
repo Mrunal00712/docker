@@ -57,7 +57,8 @@ Key Words
         If we have to run the command at runtimewe have to use CMD / ENTRYPOINTkeyword in the docker file
     - MAINTAINER keyword use to give author detail
         eg., # MAINTAINER Vimal Daga <vimal@lw.com>
-    - ADD same as copy extra funcitionality is that you can add the URl eg., git hub rwa file URL
+    - ADD same as copy extra funcitionality is that you can add the URl eg., git hub rwa file URL 
+            also ADD keyword has to capipability to automatically extract the Archive file eg., ADD myweb.tar /
 **********************************************************************************************************************
 How to save the image # docker save (image name) -o (file name.tar)
     eg., # docker save myh:v1 -o myweb.tar
@@ -153,3 +154,13 @@ services:
         image: mytomcat:v1
         ports:
             - "8081:8080"   // any no. you can give 
+
+Docker file for website
+FROM centos:7
+RUN yum install httpd -y
+copy *.html /var/www/hml/
+
+EXPOSE 80
+ENV NAME=vimal            //environment variable
+ENTRYPOINY [ "httpd" ]
+CMD [ "-DFOREGROUND" ]
