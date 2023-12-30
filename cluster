@@ -36,7 +36,21 @@ for lauching container in swarm :
     # docker service create --name webserver httpd
     # docker service ps webserver
 
+*************************************************************************************************************************************
+Swarm Replication
 
+ Condition:
+    when you hve run your website in a conainer suppose cantainer has capability to handle 100 clents,
+    if 101 clients comes than webside goes down here the concep come of replica it will launch exactly same copy of container
+    this is also called the horizontal scaling they creating muitple replicas
+      from swarm prespective container is a TASK
+      for Docker prespective it is a container and 
+      for realastic prespective it is a process
+
+Load Balancing: 
+    - A load balancer is aa device in betn client and servers ensuring that all resource servers are used equally.
+    - swarm will give you pre creaded load balancing (PRE SETUP LOAD BALANCER)  
+    - whenever you want to launch a task swarm will always launch a one service for you i.e., almost equal to load balancer
 
 
 
