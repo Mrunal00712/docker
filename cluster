@@ -51,8 +51,19 @@ Load Balancing:
     - A load balancer is aa device in betn client and servers ensuring that all resource servers are used equally.
     - swarm will give you pre creaded load balancing (PRE SETUP LOAD BALANCER)  
     - whenever you want to launch a task swarm will always launch a one service for you i.e., almost equal to load balancer
+  - by default service is isolated to expose it in to outside world have use port
+      # docker service create --name myweb  --publish 8080:80 httpd
+
+pratical: 
+31-2-3    # docker service create --name myweb --publish 8080:80 vimal10/apache-webserver-php 
+        // using this image eew will get to know on whch cantainer our webside is running
 
 
+          # docker service scale myweb=5
+          Adding scale out
+          Decreasing Sacale In
+Tis Concep technically known as Orcherstration (managing container here and there is known as orcherestraon )
+***********************************************************************************************************************************
 
 
 
