@@ -64,7 +64,22 @@ pratical:
           Decreasing Sacale In
 Tis Concep technically known as Orcherstration (managing container here and there is known as orcherestraon )
 ***********************************************************************************************************************************
+Distributed N/W  # docker network inspect ingress , # docker network inspect (network name )
 
+one single network distrubutd among the multiples nodes to have the connectivity
+(eg., if 3 tier arch we want the connectivity in database and webside if they launch on different-different engine)
 
+Docker having capabilty to create this network we will requried a driver
+      Driver --> overlay (it will create a distrubuted network)
+Different - different docker engine cnnectivity will manged by overlay network
+swarm automatically create a overlay network as you exyent the worker node automaticaly distrubuted network will extend
 
+creating overlay network:
+  # docker network create --driver overlay  (network name=mylwoverlay) 
+  # docker network create --opt encrpted --driver overlay mysecnet //we have make this network encrypyed 
+  # docker network ls 
+  # docker netwrk inspect mysecnet
 
+creating the service using your network :
+  # docker service create --name myweb --publish 8080:80 --network mylwoverlay vimal13/apache-webserver-php
+  # docker service create --name myweb --publish 8080:80 --network mysecnet --replicas 2 vimal13/apache-webserver-php
