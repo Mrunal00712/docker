@@ -11,3 +11,35 @@ condition:
     here we are doing the horizonal scaling (multiples hosts, eg., A(worker node), B(worker node) ...
     for managing this worker nodes we required the manager or master node
   when all this woring together to achieve one task, this team technically known as cluster (ther are managing container caleed as container cluster)
+   for cerating any cluster we requried software(tool) their are various tools available in market (cluster management tool)
+    one of the famous tool is Kubernetes, swarm
+  here we are learning swarm , swarm is a tool come from docker ,, kubernetes is a third parthy management tool
+
+**************************************************************************************************************************************
+Creating the Swarm Cluster
+  1. Manager/ master node
+  2. multiple slave node
+
+
+Initalinsizing a swarm in master/ manager node # docker swarm init -h
+    # docker swarm init --advertise-addr (master IP)     // ater running this command it automatically become master node
+    # docker node ls
+
+after this the master/manager will give you command (# docker swarm join --tok.........) copy this command and paste in worker node 
+that's set == horizonta scaling
+
+#docker info,#docker node ls
+
+
+for lauching container in swarm :
+    # docker service ls 
+    # docker service create --name webserver httpd
+    # docker service ps webserver
+
+
+
+
+
+
+
+
