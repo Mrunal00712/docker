@@ -1,1 +1,13 @@
+Docker Cluster = Swarm (tool provided by docker)
 
+condition:
+  Suppose when we have single host on which container multiple are running
+    challanges faced :-
+      - 1 Limited resources , if want to increase the resource then we have to do vertical scaling
+      - 2 Down-Time
+      - 3 SPOF(single point of failure)
+    
+  when we are having the multiple hosts on which multiple containers are running , 
+    here we are doing the horizonal scaling (multiples hosts, eg., A(worker node), B(worker node) ...
+    for managing this worker nodes we required the manager or master node
+  when all this woring together to achieve one task, this team technically known as cluster (ther are managing container caleed as container cluster)
