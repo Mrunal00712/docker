@@ -106,3 +106,12 @@ if you want to join the pervious cluster to increce the HA , use this commands i
 Raft(Raft Consensum Algo) is a prtocl which share the information between two nodes
 Quorum is a formula which helps us to do election on selecting the next manager node if first one gets down
 fault tolerance formula (N-1)/2
+
+in docker there is promote and demote options used in nodes to make the manager/worker or remove it 
+*************************************************************************************************************************************
+How to give or change that Manager node also work as worker node to manage the load(leader will slow down/ cluster will slow down)  we can remove the manager node as worker node 
+# docker node update -h 
+# docker node update --availability drain HOSTNAME   // drain means stop that cantainer or dont work as worker node 
+drain means any container runing will stop and no cantainer will run, it will works as pure *manager only node*
+it also use in worker node as maintaince by stoping the node 
+**************************************************************************************************************************************
