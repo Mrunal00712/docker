@@ -95,4 +95,14 @@ Integrating Swarm and docker-compose
    GET THE COMPOSE FILE = DOCS.DOCKER.COM/ENGINE/SWARM/STACK-DEPLOY/
    # docker stack deploy --compose-file docker-compose.yml (stack name=mypyapp)
    # docker stack ls 
-   # 
+**************************************************************************************************************************************
+High Availability (HA) to the Manager node
+
+Benefits
+  - Any where any fault happens this set up can tolerate fault == Fault-Tolerance
+if you want to join the pervious cluster to increce the HA , use this commands in Master/Manager node
+    # docker swarm join-token manager
+
+Raft(Raft Consensum Algo) is a prtocl which share the information between two nodes
+Quorum is a formula which helps us to do election on selecting the next manager node if first one gets down
+fault tolerance formula (N-1)/2
