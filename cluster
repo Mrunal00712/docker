@@ -115,3 +115,6 @@ How to give or change that Manager node also work as worker node to manage the l
 drain means any container runing will stop and no cantainer will run, it will works as pure *manager only node*
 it also use in worker node as maintaince by stoping the node 
 **************************************************************************************************************************************
+Docker Inside Docker (DiD)
+  there is a imae provided by docker hum i.e., Docker in Docker 
+  # docker run -dit --privileged --nme mydind docker:dind
